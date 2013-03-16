@@ -73,6 +73,16 @@ $if(graphics)$
 \let\Oldincludegraphics\includegraphics
 \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
 $endif$
+%Set page magins
+\topmargin 0.1in 
+\headheight 0.1in
+\headsep 0.0in
+\hoffset 0.0in
+\oddsidemargin 0.0in
+\textwidth 6.5in
+\textheight 8.3in
+\voffset 0.0in
+\marginparwidth 0.0in
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
