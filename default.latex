@@ -1,6 +1,11 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$,oneside]{$documentclass$}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage[section]{placeins}
+%\usepackage[htt]{hyphenat}
+\usepackage[myheadings]{fullpage}
+\usepackage{float}
+\usepackage{ifthen}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -67,23 +72,13 @@ $if(graphics)$
 % that they will get their normal width if they fit onto the page, but
 % are scaled down if they would overflow the margins.
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
-\else\Gin@nat@width\fi}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \makeatother
 \let\Oldincludegraphics\includegraphics
-\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth,height=4in,keepaspectratio]{#1}}
+\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth,height=3.5in,keepaspectratio]{#1}}
+
 $endif$
-%Set page magins
-%\topmargin 0.1in 
-%\headheight 0.1in
-%\headsep 0.0in
-%\hoffset 0.0in
-\oddsidemargin 0.8in
-\evensidemargin 0.8in
-%\textwidth 6.5in
-%\textheight 8.3in
-%\voffset 0.0in
-%\marginparwidth 0.0in
+
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -154,7 +149,10 @@ $if(toc)$
 \tableofcontents
 }
 $endif$
+%\let\Oldbegin\begin
+%\renewcommand{\begin}[1]{\Oldbegin{#1}}
 $body$
+%\renewcommand{\begin}[1]{\Oldbegin{#1}}
 
 $if(natbib)$
 $if(biblio-files)$
