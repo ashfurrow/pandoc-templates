@@ -2,8 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[section]{placeins}
-%\usepackage[htt]{hyphenat}
-\usepackage[myheadings]{fullpage}
+\usepackage[headings]{fullpage}
 \usepackage{float}
 \usepackage{ifthen}
 \usepackage{amssymb,amsmath}
