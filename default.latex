@@ -133,6 +133,9 @@ $endif$
 \date{$date$}
 
 \begin{document}
+
+\sf
+
 $if(title)$
 \maketitle
 $endif$
